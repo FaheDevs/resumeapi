@@ -23,8 +23,6 @@ public class ResumeapiApplication {
 			AuthenticationService service,
 			ProfileService ProfileService
 	) {
-		//TODO : before adding a comment email for verification ,
-		// validation from the email for the comment to be posted , make a comments page on github pages
 		return args -> {
 //			var admin = RegisterRequest.builder()
 //					.firstname("Admin")
