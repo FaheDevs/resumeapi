@@ -4,7 +4,6 @@ import com.faheDevs.resumeapi.securityManagement.auditing.ApplicationAuditAware;
 import com.faheDevs.resumeapi.securityManagement.user.UserRepository;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
-import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import lombok.RequiredArgsConstructor;
