@@ -1,11 +1,9 @@
 version: '3.3'
 services:
   fahedresumeapi:
-    image: fahed587/fahedresumeapi:7
+    image: fahed587/fahedresumeapi:8
     ports:
       - "8080:8080"
-    volumes:
-      - "./.env:/.env"
     depends_on:
       - local-mongo
       - postgres-jwt-security
