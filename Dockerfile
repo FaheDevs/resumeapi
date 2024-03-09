@@ -1,5 +1,5 @@
 # Start with a base image containing Java runtime
-FROM adoptopenjdk:17-jdk-hotspot as build
+FROM eclipse-temurin:17-jdk as build
 
 # Set the working directory in the Docker container to your application directory
 WORKDIR /workspace/resumeapi
@@ -18,8 +18,8 @@ COPY src src
 # Build the application
 RUN ./mvnw package -DskipTests
 
-# Use the official AdoptOpenJDK for a lean runtime image
-FROM adoptopenjdk:17-jre-hotspot
+# Use the official Eclipse Temurin for a lean runtime image
+FROM eclipse-temurin:17-jre
 
 # Set the working directory to where we'll run the app
 WORKDIR /app
