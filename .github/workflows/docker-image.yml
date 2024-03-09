@@ -30,4 +30,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/my-image-name:${{ github.run_number }}
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/Fahed-ResumeApi:${{ github.run_number }}
