@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   fahedresumeapi:
-    image: fahed587/fahedresumeapi:9
+    image: fahed587/fahedresumeapi:10
     ports:
       - "9090:8080"
     depends_on:
