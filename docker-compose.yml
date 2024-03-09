@@ -1,21 +1,23 @@
 version: '3.3'
 services:
   fahedresumeapi:
-    image: fahed587/fahedresumeapi:8
+    image: fahed587/fahedresumeapi:9
     ports:
-      - "8080:8080"
+      - "9090:8080"
     depends_on:
-      - local-mongo
       - postgres-jwt-security
-  local-mongo:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
+      - local-mongo
+
   postgres-jwt-security:
     image: postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       POSTGRES_DB: jwt_security
       POSTGRES_USER: username
       POSTGRES_PASSWORD: password
+
+  local-mongo:
+    image: mongo:latest
+    ports:
+      - "27018:27017"
