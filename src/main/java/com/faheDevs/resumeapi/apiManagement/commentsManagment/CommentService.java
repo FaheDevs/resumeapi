@@ -8,15 +8,12 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class CommentService {
-    private final CommentRepository commentRepository;
+    private final CommentRepositoryImpl commentRepository;
 
 
     public List<Comment> getAllComments() {
-        return commentRepository.findAll();
+        return commentRepository.getAllComments();
     }
 
-    public Comment createComment(Comment comment) {
-        return commentRepository.save(comment);
-    }
 
 }

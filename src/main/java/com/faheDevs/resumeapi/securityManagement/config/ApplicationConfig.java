@@ -2,12 +2,7 @@ package com.faheDevs.resumeapi.securityManagement.config;
 
 import com.faheDevs.resumeapi.securityManagement.auditing.ApplicationAuditAware;
 import com.faheDevs.resumeapi.securityManagement.user.UserRepository;
-import com.mongodb.ConnectionString;
-import com.mongodb.MongoClientSettings;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
@@ -27,18 +22,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class ApplicationConfig {
 
   private final UserRepository repository;
-  @Value("${DB_URL}")
-  private String mongoUri;
-
-  @Bean
-  public MongoClient mongoClient() {
-    ConnectionString connectionString = new ConnectionString(mongoUri);
-    MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
-            .applyConnectionString(connectionString)
-            .build();
-
-    return MongoClients.create(mongoClientSettings);
-  }
 
   @Bean
   public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {

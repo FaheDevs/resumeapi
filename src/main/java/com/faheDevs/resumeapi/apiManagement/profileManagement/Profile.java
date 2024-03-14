@@ -8,13 +8,10 @@ import jakarta.persistence.Id;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
 
-@Document(collection = "Profile")
 @Data
 @Builder
 @ToString(exclude = "id")
@@ -25,15 +22,11 @@ public class Profile {
     private String name;
     private String aboutMe;
 
-    @DBRef
     private List<Project> projects;
 
-    @DBRef
     private List<Experience> experience;
 
-    @DBRef
     private Contact contacts;
 
-    @DBRef
     private List<Comment> comments;
 }

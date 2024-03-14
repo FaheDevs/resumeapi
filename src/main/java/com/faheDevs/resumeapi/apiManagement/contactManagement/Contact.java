@@ -5,9 +5,7 @@ import jakarta.validation.constraints.Email;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Contact")
 @Data
 @Builder
 @ToString(exclude = "id")

@@ -13,26 +13,10 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class ContactService {
-    private final ContactRepository contactRepository;
+    private final ContactRepositoryImpl contactRepositoryImpl;
 
-    public List<ContactDTO> getAllContacts() {
-        List<Contact> contacts = contactRepository.findAll();
-        return contacts.stream()
-                .map(MapperMethods::mapToContactDTO)
-                .collect(Collectors.toList());
-    }
-
-    public Contact getContactById(String id) {
-        return contactRepository.findById(id)
-                .orElseThrow(() -> new NoSuchElementException("Contact not found with id: " + id));
-    }
-
-    public Contact createContact(Contact contact) {
-        return contactRepository.save(contact);
-    }
-
-    public void save (Contact contact){
-        contactRepository.save(contact);
+    public ContactDTO getAllContacts() {
+        return MapperMethods.mapToContactDTO(contactRepositoryImpl.getContact());
     }
 
 }

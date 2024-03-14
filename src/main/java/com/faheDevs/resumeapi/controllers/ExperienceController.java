@@ -33,13 +33,4 @@ public class ExperienceController {
         return ResponseEntity.ok(experienceService.getAllExperiences());
     }
 
-    @PostMapping
-    @Hidden
-    public ResponseEntity<Experience> createExperience(@RequestBody Experience experience) {
-        Experience createdExperience = experienceService.createExperience(experience);
-        return new ResponseEntity<>(createdExperience, HttpStatus.CREATED);
-    }
-    // Add endpoints for updating and deleting experiences as needed
-
-    // Add endpoints for updating and deleting experiences as needed
 }

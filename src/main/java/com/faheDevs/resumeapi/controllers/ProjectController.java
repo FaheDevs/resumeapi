@@ -1,15 +1,14 @@
 package com.faheDevs.resumeapi.controllers;
 
-import com.faheDevs.resumeapi.apiManagement.projectManagment.Project;
 import com.faheDevs.resumeapi.apiManagement.projectManagment.ProjectService;
 import com.faheDevs.resumeapi.controllers.DTOs.ProjectDTO;
-import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -31,10 +30,4 @@ public class ProjectController {
         return ResponseEntity.ok(projectService.getAllProjects());
     }
 
-    @PostMapping
-    @Hidden
-    public ResponseEntity<Project> createProject(@RequestBody Project project) {
-        Project createdProject = projectService.createProject(project);
-        return new ResponseEntity<>(createdProject, HttpStatus.CREATED);
-    }
 }

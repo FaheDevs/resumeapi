@@ -26,7 +26,7 @@ public class ProfileController {
     @Operation(summary = "Get profile", description = "Returns a list of all profile")
     @ApiResponse(responseCode = "200", description = "Successful operation")
     public ResponseEntity<ProfileDTO> getProfile() {
-        return ResponseEntity.ok(profileService.getProfile().get(0));
+        return ResponseEntity.ok(profileService.getProfile());
     }
 }
 

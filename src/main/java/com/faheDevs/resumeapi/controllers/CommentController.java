@@ -29,12 +29,4 @@ public class CommentController {
         return ResponseEntity.ok(commentService.getAllComments());
     }
 
-    @PostMapping
-    @Hidden
-    public ResponseEntity<Comment> addComment(@RequestBody Comment comment) {
-        Comment newComment = commentService.createComment(comment);
-        return new ResponseEntity<>(newComment, HttpStatus.CREATED);
-    }
-
-    // Additional endpoints for updating or deleting comments can be added here.
 }

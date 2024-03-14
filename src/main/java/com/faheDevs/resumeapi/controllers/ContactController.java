@@ -1,16 +1,13 @@
 package com.faheDevs.resumeapi.controllers;
 
-import com.faheDevs.resumeapi.apiManagement.contactManagement.Contact;
 import com.faheDevs.resumeapi.apiManagement.contactManagement.ContactService;
 import com.faheDevs.resumeapi.controllers.DTOs.ContactDTO;
-import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/cv/contact")
@@ -25,16 +22,7 @@ public class ContactController {
 
     @GetMapping
     @Operation(summary = "Get all contacts", description = "Returns a list of all contacts")
-    public ResponseEntity<List<ContactDTO>> getAllContacts() {
+    public ResponseEntity<ContactDTO> getAllContacts() {
         return ResponseEntity.ok(contactService.getAllContacts());
     }
-
-    @PostMapping
-    @Hidden
-    public ResponseEntity<Contact> createContact(@RequestBody Contact contact) {
-        Contact createdContact = contactService.createContact(contact);
-        return new ResponseEntity<>(createdContact, HttpStatus.CREATED);
-    }
-
-    // Add endpoints for updating and deleting contacts as needed
 }

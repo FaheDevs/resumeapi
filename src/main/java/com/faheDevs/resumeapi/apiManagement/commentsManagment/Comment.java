@@ -7,9 +7,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Comment")
 @Data
 @Builder
 @ToString(exclude = "id")

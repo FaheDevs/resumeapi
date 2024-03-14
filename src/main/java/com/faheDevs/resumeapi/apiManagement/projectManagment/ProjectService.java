@@ -12,29 +12,12 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class ProjectService {
-    private final ProjectRepository projectRepository;
+    private final ProjectRepositoryImpl projectRepository;
 
     public List<ProjectDTO> getAllProjects() {
         List<Project> projects = projectRepository.findAll();
         return projects.stream()
                 .map(MapperMethods::mapToProjectDTO)
                 .collect(Collectors.toList());
-    }
-
-    public Project getProjectById(String id) {
-        return projectRepository.findById(id)
-                .orElseThrow(() -> new NoSuchElementException("Project not found with id: " + id));
-    }
-
-    public Project createProject(Project project) {
-        return projectRepository.save(project);
-    }
-
-    public void saveAllProjects(List<Project> projects) {
-        projectRepository.saveAll(projects);
-    }
-
-    public void deleteAllProjects() {
-        projectRepository.deleteAll();
     }
 }
