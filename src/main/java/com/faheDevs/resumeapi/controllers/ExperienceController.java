@@ -17,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/cv/experience")
 @Tag(name = "Experience", description = "The Experience API, manage work experiences")
+@CrossOrigin(origins = "*")
 public class ExperienceController {
 
     private final ExperienceService experienceService;
