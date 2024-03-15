@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zidani Fahed API Resume</title>
+</head>
+<body>
+<section>
+    <article>
+        <h1>Quickstart for Fahed Zidani Resume REST API</h1>
+        <p class="text">Learn how to access my Resume via REST API call</p>
+        <p class="text">Swagger: <a href="https://myresumepai.azurewebsites.net/swagger-ui/index.html#/">https://myresumepai.azurewebsites.net/swagger-ui/index.html#/</a>.</p>
+    </article>
+    <article id="endpoints">
+        <h3>Endpoints</h3>
+        <p class="text">Once you're set up with cURL or an API client, you can explore my API resume using various endpoints. Endpoints are different URLs where you can make <span class="btn">GET</span> requests to view the different parts of my resume.</p><br><p class="text">See the available endpoints below:</p>
+        <ol>
+            <li>
+                <strong>Resume:</strong> View Full Resume<span class="code">https://myresumepai.azurewebsites.net/api/cv/resume<button class="button" data-text="https://myresumepai.azurewebsites.net/api/cv/resume" >Copy text</button></span>
+            </li>
+            <li>
+                <strong>Projects:</strong> View information about the projects I've built.<span class="code">https://myresumepai.azurewebsites.net/api/cv/projects<button class="button" data-text="https://myresumepai.azurewebsites.net/api/cv/projects" >Copy text</button></span>
+            </li>
+            <li>
+                <strong>Experience:</strong> Read about my previous career experience.<span class="code">https://myresumepai.azurewebsites.net/api/cv/experience<button class="button" data-text="https://myresumepai.azurewebsites.net/api/cv/experience" >Copy text</button></span>
+            </li>
+            <li>
+                <strong>Contact:</strong> View my preferred contact information. <span class="code">https://myresumepai.azurewebsites.net/api/cv/contact<button class="button" data-text="https://myresumepai.azurewebsites.net/api/cv/contact" >Copy text</button></span>
+            </li>
+        </ol>
+    </article>
+</section>
+
+<section>
+    <article id="contact">
+        <h4>Contact</h4>
+        <p class="text">Thanks for checking out my API resume. If you have any questions, you can email me at <a href="mailto:fahed.zidani@outlook.com">fahed.zidani@outlook.com</a>. You can also find me on <a href="https://github.com/FaheDevs" target="_blank">GitHub</a>, <a href="https://fr.linkedin.com/in/fahed-zidani" target="_blank">LinkedIn</a>.</p>
+    </article>
+</section>
+</body>
+</html>
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,800;1,300&display=swap');
+    :root{
+        --bg: #e5e5e5;
+        --art: #FFFFFF;
+        --code: #082846;
+        --btn: #006f66;
+        /* --link: #216869; */
+        --marker: #d70000;
+    }
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    body{
+        background-color: var(--bg);
+    }
+
+    section{
+        max-width: 900px;
+        width: 95%;
+        margin: 2rem auto;
+    }
+
+    article{
+        padding: 2rem;
+        background-color: var(--art);
+        margin: 2rem auto;
+    }
+
+    li{
+        margin: 2rem 0rem 2rem 3rem;
+    }
+
+    li::marker{
+        color: var(--marker);
+        font-weight: 800;
+    }
+
+
+    code, .code{
+        display: inline-block;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.75rem;
+        margin: 1rem auto;
+        background-color: var(--code);
+        font-size: 0.85rem;
+        /* min-height: 100px; */
+        align-items: flex-end;
+        color: #FFFFFF;
+
+    }
+
+
+    .btn, button{
+        height: 100%;
+        /* border-radius: 2rem; */
+        border: none;
+        padding: .12rem 1rem .12rem 1rem;
+        background-color: var(--btn);
+        color: var(--art);
+        /* font-weight: 500; */
+    }
+
+    button:hover{
+        cursor: copy;
+    }
+
+    button:focus{
+        opacity: 0.9;
+        border: 1px solid var(--art);
+        background-color: var(--marker);
+    }
+
+    a{
+        /* color: var(--link); */
+    }
+
+    h1, h2, h3, h4{
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .text{
+        line-height: 1.5rem;
+    }
+
+    button{
+        background-color: var(--marker);
+        padding: .2rem;
+    }
+
+    @media only screen and (max-width: 800px) {
+        section{
+            width: calc(100% - 1rem);
+            margin: 0 auto;
+        }
+
+        code, .code{
+            overflow-wrap: break-word;
+            width: 100%;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+            overflow: auto;
+        }
+
+        article{
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow: auto;
+        }
+
+        button{
+            margin-top: 1rem;
+        }
+
+
+        pre{
+            overflow: auto;
+        }
+
+        li{
+            margin: 1rem;
+        }
+    }
+
+    .note{
+        padding: .25rem 1rem .25rem 1rem;
+        background-color: var(--btn);
+        color: var(--art);
+    }
+
+</style>
+
+<script>
+    function myFunction() {
+
+        // Get the text field
+        var copyText = 'booooom';
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText);
+
+        // Alert the copied text
+        console.log(this)
+    }
+
+
+    const buttons = document.getElementsByClassName('button')
+    for (let i = 0; i < buttons.length; i++){
+        buttons[i].addEventListener('click', (e) => {
+            const copyText = e.target.dataset.text
+            navigator.clipboard.writeText(copyText)
+            e.target.textContent = 'Text Copied'
+        })
+    }
+
+</script>
